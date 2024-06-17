@@ -53,7 +53,7 @@ async function auth(req: NextApiRequest, res: NextApiResponse) {
       session: async ({ session, token }) => {
         session.user = token.user as IUser;
 
-        //@ts-ignore
+        // @ts-ignore
         delete session?.user?.password;
 
         return session;
