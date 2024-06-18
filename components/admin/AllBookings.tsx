@@ -19,8 +19,7 @@ const AllBookings = ({ data }: Props) => {
 
   const router = useRouter();
 
-  const [deleteBooking, { error, isLoading, isSuccess }] =
-    useDeleteBookingMutation();
+  const [deleteBooking, { error, isLoading, isSuccess }] = useDeleteBookingMutation();
 
   useEffect(() => {
     if (error && "data" in error) {

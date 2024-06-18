@@ -6,7 +6,11 @@ import { rooms } from "./data";
 const seedRooms = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://ghulamabbas:ghulamabbas@bookit.nk5ucov.mongodb.net/bookit?retryWrites=true&w=majority"
+      "mongodb+srv://root:Unicorn3214@127.0.0.1/bookit-v2",
+      {
+          maxPoolSize: 10,
+          authSource: "admin",
+      }
     );
 
     await Room.deleteMany();

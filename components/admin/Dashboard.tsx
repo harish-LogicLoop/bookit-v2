@@ -14,8 +14,7 @@ const Dashboard = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
-  const [getSalesStats, { error, data, isLoading }] =
-    useLazyGetSalesStatsQuery();
+  const [getSalesStats, { error, data, isLoading }] = useLazyGetSalesStatsQuery();
 
   useEffect(() => {
     if (error && "data" in error) {

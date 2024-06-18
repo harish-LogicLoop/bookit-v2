@@ -31,14 +31,11 @@ const BookingDatePicker = ({ room }: Props) => {
 
   const [newBooking] = useNewBookingMutation();
 
-  const [checkBookingAvailability, { data }] =
-    useLazyCheckBookingAvailabilityQuery();
+  const [checkBookingAvailability, { data }] = useLazyCheckBookingAvailabilityQuery();
 
   const isAvailable = data?.isAvailable;
 
-  const { data: { bookedDates: dates } = {} } = useGetBookedDatesQuery(
-    room._id
-  );
+  const { data: { bookedDates: dates } = {} } = useGetBookedDatesQuery(room._id);
   const excludeDates = dates?.map((date: string) => new Date(date)) || [];
 
   const onChange = (dates: Date[]) => {
